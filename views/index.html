@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+
+   <head>
+      <title>URL Shortener</title>
+      <link rel="shortcut icon" href="https://i.postimg.cc/rmNmQDVh/link5-128.png" type="image/x-icon"/>
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Allerta+Stencil" />
+      <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Carme" />
+      <link href="/public/style.css" rel="stylesheet" type="text/css">
+   </head>
+   <body>
+      <div class="container">
+<!--         <h2>API Project: URL Shortener Microservice</h2>
+        <h3>User Story: </h3>
+        <ol>
+          <li>I can POST a URL to <code>https://time-snipe.glitch.me/api/shorturl/new</code> and I will receive a shortened URL in the JSON response.<br>Example : <code>{"original_url":"www.google.com","short_url":1}</code></li>
+          <li>If I pass an invalid URL that doesn't follow the <code>http(s)://www.example.com(/more/routes)</code> format, the JSON response will contain an error like <code>{"error":"invalid URL"}</code><br>
+          HINT: to be sure that the submitted url points to a valid site you can use the function <code>dns.lookup(host, cb)</code> from the <code>dns</code> core module.</li>
+          <li>When I visit the shortened URL, it will redirect me to my original link.</li>
+        </ol>
+        
+        <h3>Short URL Creation </h3>
+        <p>
+          example: <code>POST [https://time-snipe.glitch.me/api/shorturl/new</code> - <code>https://www.google.com</code>
+        </p>
+
+ action="api/shorturl/new" method="POST"
+
+-->
+        <header>
+          <h1>Welcome to the time-snipe Microservice</h1>
+        </header>
+        <form id="submitLink">
+          <label for="url_input">&#x1F517 to be shortened</label><br/>
+          <input id="url_input" type="text" name="url" value="https://upload.wikimedia.org/wikipedia/commons/6/6d/Listen%2C_do_you_want_to_know_a_secret.jpg">
+          <br/>
+          <input id="shortenButton" type="submit" value="Shorten &#x1F517">
+        
+        </form>
+<!--         <h3>Example Usage:</h3>
+        <a href="https://time-snipe.glitch.me/api/shorturl/7838">
+          https://time-snipe.glitch.me/api/shorturl/7838
+        </a>
+
+        <h3>Will Redirect to:</h3>
+        <p>https://google.com</p>-->
+        <div id="responseLink">
+        <label for="shortLink">Your NEW &#x1F517</label><br/>
+        <input id="shortLink" type="text" value=""/>
+        <br/>
+        <button id="copyButton" onclick="copy()">Copy</button>
+        </div>
+      </div>
+      <div class="footer">
+        <footer>
+          Made by <a href="https://twitter.com/Victor01684891">Victor Cojocaru </a>
+          with &#x1F3B5 and &#x1F499
+        </footer>
+      </div>
+         <script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>
+     <script>
+      $(function() {
+        $('#submitLink').submit(function(e) {
+          $.ajax({
+            url: 'api/shorturl/new',
+            type: 'post',
+            data: $('#submitLink').serialize(),
+            success: function(data) {
+            $('#shortLink').val(`https://time-snipe.glitch.me/api/shorturl/${data.short_url}`);
+            $("#responseLink").css({"z-index":"1"});
+          // document.getElementById("responseLink").style.margin="auto";
+              document.getElementById("responseLink").style.opacity=1;
+              document.getElementById("responseLink").style.transform="translate(0%, 0px)";
+              
+              $('#copyButton').text("Copy");
+            }
+          });
+          e.preventDefault();
+        });
+      }); 
+  var copyText = document.getElementById("shortLink");
+  function copy(){
+  $('#copyButton').text("Copied");
+  copyText.select();
+  document.execCommand("Copy");
+       }
+       
+   </script>
+   </body>
+</html>
