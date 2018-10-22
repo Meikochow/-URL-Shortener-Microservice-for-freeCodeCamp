@@ -1,0 +1,133 @@
+/****** Main Styling ******/
+
+body {
+/* 	font-family: 'Roboto', sans-serif; */
+	font-size: 16px;
+	color: #222;
+	background-color: #FaFaFa;
+	text-align: center;
+	line-height: 2em;
+  font-family:"Allerta Stencil";
+}
+
+.container {
+	padding: 0;
+	margin-top: 40px;
+}
+
+h3 {
+  margin-top: 30px;
+}
+
+.footer {
+	margin-top: 40px;
+}
+
+.user-stories {
+  position: relative;
+  text-align: justify;
+  max-width: 700px;
+  margin: 15px auto;
+}
+
+a {
+	color: #2574A9;
+} 
+
+form {
+  border-radius: 15px;
+  margin: 10px auto;
+  padding: 20px;
+  max-width: 600px;
+}
+
+label {
+  margin-right: 10px;
+}
+
+input {
+  padding: 5px;
+}
+
+#url_input{
+  min-width: 220px;
+  width:auto;
+  max-width:400px;
+  text-align: center;
+}
+
+#responseLink{
+  border-radius: 15px;
+  margin: 10px auto;
+  padding: 20px;
+  max-width: 600px;
+  opacity:0;
+  z-index:-1;
+  transition-duration: 3s;
+  -webkit-transition-duration: 3s; /* Safari */
+  position:relative;
+  transform: translate(0%, -185px); 
+}
+#shortLink{
+width:100px;
+transition-duration: 4s;
+-webkit-transition-duration: 4s; /* Safari */
+ text-align: center;
+}
+#shortLink:hover{
+width:360px;
+max-width:90%;
+transition: all 4s
+}
+
+
+#shortenButton{
+background-color:#0066ff;
+color:white;
+margin-top:10px;
+border-radius:0% 0% 0% 0%;
+border:none;
+outline:none;
+width:300px;
+height:50px;
+cursor: pointer;
+transition-duration: 0.9s;
+-webkit-transition-duration: 0.9s; /* Safari */
+font-size:22px;
+font-family:"Allerta Stencil";
+}
+#shortenButton:hover{
+  outline:none;
+  width:100px;
+  height:50px; 
+  background:#00ff00;
+  color:black;
+  transition: all 0.9s;
+  font-family:"Carme";
+  font-size:16px;
+  } 
+
+#copyButton{
+background:#00ff00;
+margin-top:10px;
+border-radius:50% 0% 50% 0%;
+border:none;
+outline:none;
+width:70px;
+height:70px;
+cursor: pointer;
+transition-duration: 0.9s;
+-webkit-transition-duration: 0.9s; /* Safari */
+font-size:16px;
+font-family:"Allerta Stencil";
+}
+#copyButton:hover{
+  border-radius:0% 50% 0% 50%;
+  background:#0066ff;
+  color:white;
+  transition: all 0.9s;
+  font-size:14px;
+  font-family:"Carme";
+  } 
+
+
